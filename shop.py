@@ -29,8 +29,8 @@
 #     print("заголовок книги называется: HTML5 Forms")
 # else:
 #     print("заголовок книги имеет другое название")
-##второй способ
-## assert "HTML5 Forms" in title_text
+# #второй способ
+# # assert "HTML5 Forms" in title_text
 # driver.quit()
 
 
@@ -324,11 +324,14 @@ post_code = driver.find_element(By.NAME, "billing_postcode")
 post_code.send_keys("257007")
 driver.execute_script("window.scrollBy(0, 600);")
 time.sleep(2)
-pyment_method = driver.find_element(By.ID, "payment_method_cheque")
-pyment_method.click()
+payment_method = driver.find_element(By.ID, "payment_method_cheque")
+payment_method.click()
 place_order = driver.find_element(By.ID, "place_order")
 place_order.click()
 thank = wait.until(
     EC.text_to_be_present_in_element((By.CSS_SELECTOR, "p.woocommerce-thankyou-order-received"),
                                      "Thank you. Your order has been received."))
+payment_type = wait.until(
+    EC.text_to_be_present_in_element((By.CSS_SELECTOR, "tfoot tr:nth-child(3) td"), "Check Payments")
+)
 driver.quit()
