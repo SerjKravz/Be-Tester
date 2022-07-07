@@ -4,24 +4,24 @@
 # 4. В разделе "Register", введите пароль для регистрации
 # 5. Нажмите на кнопку "Register"
 
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# driver = webdriver.Chrome(executable_path='C:/chromedriver.exe')
-# driver.maximize_window()
-# driver.implicitly_wait(5)
-# driver.get("http://practice.automationtesting.in/")
-#
-# my_account = driver.find_element(By.LINK_TEXT, "My Account")
-# my_account.click()
-# # Логин
-# reg_email = driver.find_element(By.NAME, "email")
-# reg_email.send_keys("phil5909@ya.ru")
-# reg_password = driver.find_element(By.ID, "reg_password")
-# reg_password.send_keys("Polspols8963")
-# reg_btn = driver.find_element(By.NAME, "register")
-# reg_btn.click()
-#
-# driver.quit()
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+driver = webdriver.Chrome(executable_path='C:/chromedriver.exe')
+driver.maximize_window()
+driver.implicitly_wait(5)
+driver.get("http://practice.automationtesting.in/")
+
+my_account = driver.find_element(By.LINK_TEXT, "My Account")
+my_account.click()
+# Регистрация пользователя
+reg_email = driver.find_element(By.NAME, "email")
+reg_email.send_keys("phil5909@ya.ru")
+reg_password = driver.find_element(By.ID, "reg_password")
+reg_password.send_keys("Polspols8963")
+reg_btn = driver.find_element(By.NAME, "register")
+reg_btn.click()
+
+driver.quit()
 ################################# Задание 2
 # 1. Откройте http://practice.automationtesting.in/
 # 2. Нажмите на вкладку "My Account Menu"
